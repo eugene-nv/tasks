@@ -20,11 +20,3 @@ def cache_function():
     return inner
 
 
-c = cache_function()
-
-print(c())
-print(c())
-print(c())
-print(c())
-
-
