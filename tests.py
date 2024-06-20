@@ -32,5 +32,21 @@ class TestCalculateFunction(unittest.TestCase):
         self.assertEqual(calculate_function([('+', 1, 1), ('*', 2, 3), ('**', 2, 2)]), [2, 6, 4])
 
 
+class TestCacheFunction(unittest.TestCase):
+
+    def test_cache_function(self):
+        x = cache_function()
+
+        lst = [x(), x(), x(), x()]
+
+        self.assertEqual(lst[0], lst[1])
+        self.assertEqual(lst[1], lst[2])
+        self.assertNotEqual(lst[3], lst[2])
+        self.assertNotEqual(lst[3], lst[1])
+        self.assertNotEqual(lst[3], lst[0])
+
+        print(lst)
+
+
 if __name__ == '__main__':
     unittest.main()
